@@ -14,3 +14,9 @@ ps_upload_file(file, description, temporary = TRUE)
 \description{
 Title
 }
+\examples{
+\dontshow{if (PlanScoreR::ps_has_key()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+# Requires API Key
+
+\dontshow{\}) # examplesIf}
+}

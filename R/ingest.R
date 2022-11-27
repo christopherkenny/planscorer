@@ -1,12 +1,22 @@
 #' Ingest PlanScore Output
 #'
-#' @param link index url output from `ps_upload` functions
+#' @param link index url output from `ps_upload()` functions
 #'
-#' @return tibble with district and plan level data
+#' @return `tibble` with district and plan level data
 #' @export
 #'
 #' @examples
+#' url <- 'https://planscore.s3.amazonaws.com/uploads/20221127T213653.168557156Z/index.json'
+#' ps_ingest(url)
 ps_ingest <- function(link) {
+
+  if (missing(link)) {
+    cli::cli_abort('{.arg link} is required.')
+  }
+
+  if (is.list(link) && 'index_url' %in% names(link)) {
+    link <- link[['index_url']]
+  }
 
   j <- jsonlite::read_json(link)
 

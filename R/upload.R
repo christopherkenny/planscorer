@@ -7,7 +7,10 @@
 #' @return
 #' @export
 #'
-#' @examples
+#' @examplesIf PlanScoreR::ps_has_key()
+#' # Requires API Key
+#'
+#'
 ps_upload_file <- function(file, description, temporary = TRUE) {
 
   if (!is.logical(temporary)) {
