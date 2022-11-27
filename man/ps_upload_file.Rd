@@ -4,9 +4,11 @@
 \alias{ps_upload_file}
 \title{Title}
 \usage{
-ps_upload_file(file, temporary = TRUE)
+ps_upload_file(file, description, temporary = TRUE)
 }
 \arguments{
+\item{file}{file to upload}
+
 \item{temporary}{Should a temporary PlanScore upload be used? Default is TRUE.}
 }
 \description{
