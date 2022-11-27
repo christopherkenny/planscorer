@@ -42,7 +42,7 @@ ps_ingest <- function(link) {
 
 
   incumbents <- tibble::enframe(j$incumbents) %>%
-    tidyr::unnest_wider(value, names_repair = ~c('district', 'incumbents')) %>%
+    tidyr::unnest_wider('value', names_repair = ~c('district', 'incumbents')) %>%
     suppressMessages()
 
   summ <- j$summary %>%
