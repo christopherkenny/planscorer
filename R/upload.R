@@ -22,13 +22,13 @@ ps_upload_file <- function(file, description, temporary = TRUE) {
     }
     temporary <- FALSE
 
-    req <- httr2::request(base_url = api_url(temporary)) |>
+    req <- httr2::request(base_url = api_url(temporary)) %>%
       httr2::req_auth_bearer_token(token = ps_get_key())
-    out <- req |>
-      httr2::req_perform() |>
+    out <- req %>%
+      httr2::req_perform() %>%
       httr2::resp_body_json()
 
-    req <- httr2::request(base_url = out[[1]]) |>
+    req <- httr2::request(base_url = out[[1]]) %>%
       httr2::req_body_multipart(
         key                     = out[[2]]$key,
         AWSAccessKeyId          = out[[2]]$AWSAccessKeyId,
@@ -40,24 +40,24 @@ ps_upload_file <- function(file, description, temporary = TRUE) {
         file                    = curl::form_file(file)
       )
 
-    out <- req |>
-      httr2::req_error(is_error = function(resp) FALSE) |>
+    out <- req %>%
+      httr2::req_error(is_error = function(resp) httr2::resp_status(resp) != 502) %>%
       httr2::req_perform()
 
-    out <- httr2::request(out$url) |>
-      httr2::req_auth_bearer_token(token = ps_get_key()) |>
-      httr2::req_body_json(data = list(description = description)) |>
-      httr2::req_perform() |>
+    out <- httr2::request(out$url) %>%
+      httr2::req_auth_bearer_token(token = ps_get_key()) %>%
+      httr2::req_body_json(data = list(description = description)) %>%
+      httr2::req_perform() %>%
       httr2::resp_body_json()
 
   } else {
     cli::cli_alert_info('Using single-step upload.')
-    req <- httr2::request(base_url = api_url(temporary)) |>
-      httr2::req_auth_bearer_token(token = ps_get_key()) |>
+    req <- httr2::request(base_url = api_url(temporary)) %>%
+      httr2::req_auth_bearer_token(token = ps_get_key()) %>%
       httr2::req_body_file(path = file)# switch to req_body_multipart to add description?
 
-    out <- req |>
-      httr2::req_perform() |>
+    out <- req %>%
+      httr2::req_perform() %>%
       httr2::resp_body_json()
   }
 
@@ -77,12 +77,12 @@ ps_upload_redist <- function(map, plans, draw, temporary = TRUE) {
     cli::cli_abort('{.arg temporary} must be {.val TRUE} or {.val FALSE}.')
   }
 
-  req <- httr2::request(base_url = api_url(temporary)) |>
-    httr2::req_auth_bearer_token(token = ps_get_key()) |>
+  req <- httr2::request(base_url = api_url(temporary)) %>%
+    httr2::req_auth_bearer_token(token = ps_get_key()) %>%
     httr2::req_body_file(path = file)
 
-  out <- req |>
-    httr2::req_perform() |>
+  out <- req %>%
+    httr2::req_perform() %>%
     httr2::resp_body_json()
 
   out

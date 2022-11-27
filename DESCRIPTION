@@ -18,5 +18,7 @@ Imports:
     dplyr,
     httr2,
     jsonlite,
+    magrittr,
     tibble,
-    tidyr
+    tidyr,
+    webshot2
