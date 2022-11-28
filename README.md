@@ -8,7 +8,7 @@
 [![R-CMD-check](https://github.com/christopherkenny/PlanScoreR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/christopherkenny/PlanScoreR/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-`PlanScoreR` offers and R interface to PlanScore.org’s API.
+`PlanScoreR` offers an R interface to PlanScore.org’s API.
 
 ## Installation
 

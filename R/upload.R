@@ -57,6 +57,13 @@ ps_upload_file <- function(file, description = NULL, temporary = TRUE) {
 
   } else {
     cli::cli_alert_info('Using single-step upload.')
+
+    # if (!is.null(description)) {
+    #   j <- jsonlite::read_json(file)
+    #   j[[3]]$description <- description
+    #   jsonlite::write_json(j, file)
+    # }
+
     req <- httr2::request(base_url = api_url(temporary)) %>%
       httr2::req_auth_bearer_token(token = ps_get_key()) %>%
       httr2::req_body_file(path = file)# switch to req_body_multipart to add description?
@@ -79,7 +86,7 @@ ps_upload_file <- function(file, description = NULL, temporary = TRUE) {
 ps_upload_redist <- function(map, plans, draw, ...) {
 
   plans <- plans %>%
-    dplyr::filter(draw == draw) %>%
+    dplyr::filter(.data$draw == .env$draw) %>%
     attr('plans')
 
   map$district <- c(plans[, 1])
