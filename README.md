@@ -54,11 +54,11 @@ ps_ingest(links)
 To capture the outputted figures on the site:
 
 ``` r
-img <- tempfile(fileext = '.png')
+img <- 'man/figures/README-planscore.png'
 ps_capture(links, img)
-#> [1] "C:\\Users\\chris\\AppData\\Local\\Temp\\RtmpcdUM8N\\file14a4398b50a6.png"
+#> [1] "man/figures/README-planscore.png"
 
 knitr::include_graphics(img)
 ```
 
-<img src="../../../AppData/Local/Temp/RtmpcdUM8N/file14a4398b50a6.png" width="100%" />
+<img src="man/figures/README-planscore.png" width="100%" />
