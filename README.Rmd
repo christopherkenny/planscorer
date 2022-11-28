@@ -1,0 +1,63 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = '#>',
+  fig.path = 'man/figures/README-',
+  out.width = '100%'
+)
+```
+
+# PlanScoreR
+
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/christopherkenny/PlanScoreR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/christopherkenny/PlanScoreR/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
+
+`PlanScoreR` offers and R interface to PlanScore.org's API.
+
+## Installation
+
+You can install the development version of PlanScoreR from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages('remotes')
+remotes::install_github('christopherkenny/PlanScoreR')
+```
+
+## Example
+
+With a file, you can upload using the `ps_upload_file()` option:
+
+```{r example}
+library(PlanScoreR)
+## basic example code
+
+file <- system.file('extdata/null-plan-incumbency.geojson', package = 'PlanScoreR')
+links <- ps_upload_file(file)
+```
+
+```{r, echo=FALSE}
+Sys.sleep(20)
+```
+
+
+To read the data results:
+
+```{r}
+ps_ingest(links)
+```
+
+To capture the outputted figures on the site:
+
+```{r}
+img <- tempfile(fileext = '.png')
+ps_capture(links, img)
+
+knitr::include_graphics(img)
+```
