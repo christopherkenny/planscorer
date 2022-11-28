@@ -1,5 +1,5 @@
 Package: PlanScoreR
-Title: Interact with PlanScore.org
+Title: Interact with PlanScore
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Christopher T.",
@@ -7,7 +7,12 @@ Authors@R:
            role = c("aut", "cre"),
            email = "christopherkenny@fas.harvard.edu",
            comment = c(ORCID = "0000-0002-9386-6860"))
-Description: What the package does (one paragraph).
+Description: Provides access to the PlanScore Application Programming Interface 
+    (<https://github.com/PlanScore/PlanScore/blob/main/API.md>) for scoring redistricting
+    plans. Allows for upload of plans from block assignment files and shape files. 
+    For shapes in memory, such as from 'sf' or 'redist', it processes them to save
+    and upload. Includes tools for tidying responses and saving output from the 
+    website.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

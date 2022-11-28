@@ -90,7 +90,7 @@ ps_upload_redist <- function(map, plans, draw, ...) {
     sf::st_as_sf() %>%
     dplyr::group_by(.data$district) %>%
     dplyr::summarize() %>%
-    sf::st_write(path)
+    sf::st_write(path, quiet = TRUE)
 
   ps_upload_file(path, ...)
 }
@@ -104,7 +104,7 @@ ps_upload_shp <- function(shp, ...) {
   path <- fs::file_temp(ext = '.geojson')
 
   shp %>%
-    sf::st_write(path)
+    sf::st_write(path, quiet = TRUE)
 
   ps_upload_file(path, ...)
 }
