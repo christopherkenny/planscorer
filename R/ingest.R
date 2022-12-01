@@ -69,9 +69,8 @@ ps_ingest <- function(link) {
         summ, details
       )
   } else {
-    j <- readr::read_tsv(link) %>% suppressMessages()
-
-    j %>%
+    readr::read_tsv(link) %>%
+      suppressMessages() %>%
       dplyr::rename_with(
         .fn = function(x) {
           x %>%
