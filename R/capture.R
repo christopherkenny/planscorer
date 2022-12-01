@@ -7,9 +7,12 @@
 #' @export
 #'
 #' @examples
+#' \dontest{
+#' # often times out
 #' url <- 'https://planscore.org/plan.html?20221127T213653.168557156Z'
 #' tf <- tempfile(fileext = '.png')
 #' ps_capture(url, path = tf)
+#' }
 ps_capture <- function(link, path) {
 
   if (missing(link)) {
@@ -21,7 +24,7 @@ ps_capture <- function(link, path) {
   }
 
   if (missing(path)) {
-    path <- 'planscore.png'
+    cli::cli_abort('{.arg path} is required.')
   }
 
   webshot2::webshot(url = link, file = path)

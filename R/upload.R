@@ -2,6 +2,11 @@
 #'
 #' @param file file to upload, one of a geojson, block assignment file, or zipped shape file
 #' @param description text for plan description
+#' @param incumbents Incumbent party, one of `'D'` (Democrat), `'R'` (Republican),
+#' or `'O'` (Open) for each district. Assumes `'O'` if none is provided.#'
+#' @param model_version character model version to use. Available options are listed by [ps_model_versions()].
+#' @param library_metadata Any additional data to be passed through for possible later use.
+#' For advanced use: Should likely be left `NULL`.
 #' @param temporary Should a temporary PlanScore upload be used? Default is TRUE.
 #'
 #' @return list of links to index and plan, on success
@@ -13,18 +18,20 @@
 #' # Requires API Key
 #' file <- system.file('extdata/null-plan-incumbency.geojson', package = 'PlanScoreR')
 #' ps_upload_file(file)
-ps_upload_file <- function(file, description = NULL, temporary = TRUE) {
+ps_upload_file <- function(file, description = NULL, incumbents = NULL,
+                           model_version = NULL, library_metadata = NULL,
+                           temporary = TRUE) {
 
   if (!is.logical(temporary)) {
     cli::cli_abort('{.arg temporary} must be {.val TRUE} or {.val FALSE}.')
   }
 
-  if (fs::file_size(file) > 5e6) {
+  is_geojson <- fs::path_ext(file) == 'geojson'
+
+  if (!is_geojson || !is.null(incumbents) || !is.null(model_version) || !is.null(library_metadata) ||
+      fs::file_size(file) > 5e6) {
     cli::cli_alert_info('Using multi-step upload.')
 
-    if (missing(description)) {
-      description <- NULL
-    }
     temporary <- FALSE
 
     req <- httr2::request(base_url = api_url(temporary)) %>%
@@ -51,7 +58,14 @@ ps_upload_file <- function(file, description = NULL, temporary = TRUE) {
 
     out <- httr2::request(out$url) %>%
       httr2::req_auth_bearer_token(token = ps_get_key()) %>%
-      httr2::req_body_json(data = list(description = description)) %>%
+      httr2::req_body_json(
+        data = list(
+          description = description,
+          incumbents = incumbents,
+          model_version = model_version,
+          library_metadata = library_metadata
+        )
+      ) %>%
       httr2::req_perform() %>%
       httr2::resp_body_json()
 

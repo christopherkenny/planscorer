@@ -7,7 +7,14 @@
 \alias{ps_upload_shp}
 \title{Upload to PlanScore}
 \usage{
-ps_upload_file(file, description = NULL, temporary = TRUE)
+ps_upload_file(
+  file,
+  description = NULL,
+  incumbents = NULL,
+  model_version = NULL,
+  library_metadata = NULL,
+  temporary = TRUE
+)
 
 ps_upload_redist(map, plans, draw, ...)
 
@@ -17,6 +24,14 @@ ps_upload_shp(shp, ...)
 \item{file}{file to upload, one of a geojson, block assignment file, or zipped shape file}
 
 \item{description}{text for plan description}
+
+\item{incumbents}{Incumbent party, one of \code{'D'} (Democrat), \code{'R'} (Republican),
+or \code{'O'} (Open) for each district. Assumes \code{'O'} if none is provided.#'}
+
+\item{model_version}{character model version to use. Available options are listed by \code{\link[=ps_model_versions]{ps_model_versions()}}.}
+
+\item{library_metadata}{Any additional data to be passed through for possible later use.
+For advanced use: Should likely be left \code{NULL}.}
 
 \item{temporary}{Should a temporary PlanScore upload be used? Default is TRUE.}
 
