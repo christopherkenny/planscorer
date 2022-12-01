@@ -1,8 +1,7 @@
 url: http://christophertkenny.com/PlanScoreR/
 template:
   bootstrap: 5
-  params:
-    bootswatch: morph
+  bootswatch: pulse
 reference:
 - title: "Upload plans to PlanScore"
   desc: "Upload files, `sf` tibbles, or `redist_plans` to PlanScore"
