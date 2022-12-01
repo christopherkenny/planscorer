@@ -1,0 +1,10 @@
+citHeader("To cite PlanScoreR in publications use:")
+
+citEntry(
+  entry    = "misc",
+  title    = 'PlanScore',
+  year     = 2022,
+  url      = 'planscore.org',
+  note     = '',
+  textVersion = 'PlanScore. 2022. planscore.org.'
+)
