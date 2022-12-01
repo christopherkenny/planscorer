@@ -58,11 +58,11 @@ ps_upload_file <- function(file, description = NULL, temporary = TRUE) {
   } else {
     cli::cli_alert_info('Using single-step upload.')
 
-    # if (!is.null(description)) {
-    #   j <- jsonlite::read_json(file)
-    #   j[[3]]$description <- description
-    #   jsonlite::write_json(j, file)
-    # }
+    if (!is.null(description)) {
+      j <- jsonlite::read_json(file)
+      j <- purrr::prepend(j, values = c(description = description), before = 2)
+      jsonlite::write_json(j, file, auto_unbox = TRUE)
+    }
 
     req <- httr2::request(base_url = api_url(temporary)) %>%
       httr2::req_auth_bearer_token(token = ps_get_key()) %>%
