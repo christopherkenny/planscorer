@@ -18,7 +18,7 @@ path to screenshot
 Capture PlanScore Graphs
 }
 \examples{
-\dontest{
+\donttest{
 # often times out
 url <- 'https://planscore.org/plan.html?20221127T213653.168557156Z'
 tf <- tempfile(fileext = '.png')

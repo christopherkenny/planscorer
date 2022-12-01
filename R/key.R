@@ -62,7 +62,8 @@ ps_set_key <- function(key, overwrite = FALSE, install = FALSE) {
     if (any(exists)) {
       if (sum(exists) > 1) {
         cli::cli_abort(c('Multiple entries in .Renviron found.',
-                         'i' = 'Edit manually with {.fn usethis::edit_r_environ}.'))
+          'i' = 'Edit manually with {.fn usethis::edit_r_environ}.'
+        ))
       }
 
       if (overwrite) {
@@ -71,7 +72,8 @@ ps_set_key <- function(key, overwrite = FALSE, install = FALSE) {
         do.call(Sys.setenv, key)
       } else {
         cli::cli_inform('{.arg PLANSCORE_KEY} already exists in .Renviron.',
-                        'i' = 'Edit manually with {.fn usethis::edit_r_environ} or set {.code overwrite = TRUE}.')
+          'i' = 'Edit manually with {.fn usethis::edit_r_environ} or set {.code overwrite = TRUE}.'
+        )
       }
     } else {
       lines[length(lines) + 1] <- newline

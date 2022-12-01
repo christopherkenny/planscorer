@@ -4,12 +4,16 @@
 \alias{ps_save}
 \title{Save PlanScore Output}
 \usage{
-ps_save(link, path)
+ps_save(link, path, json = TRUE)
 }
 \arguments{
 \item{link}{index url output from \code{ps_upload()} functions}
 
-\item{path}{path to save copy of data in, likely ending in \code{.json}}
+\item{path}{path to save copy of data in, likely ending in \code{.json} if \code{json = TRUE}
+or \code{.tsv} if \code{json = FALSE}.}
+
+\item{json}{should the file be saved as \code{.json} (\code{TRUE}) or \code{.tsv} (\code{FALSE}).
+\code{json = TRUE} is slower but contains more information.}
 }
 \value{
 path to \code{json} file

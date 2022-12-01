@@ -21,7 +21,6 @@
 ps_upload_file <- function(file, description = NULL, incumbents = NULL,
                            model_version = NULL, library_metadata = NULL,
                            temporary = TRUE) {
-
   if (!is.logical(temporary)) {
     cli::cli_abort('{.arg temporary} must be {.val TRUE} or {.val FALSE}.')
   }
@@ -29,7 +28,7 @@ ps_upload_file <- function(file, description = NULL, incumbents = NULL,
   is_geojson <- fs::path_ext(file) == 'geojson'
 
   if (!is_geojson || !is.null(incumbents) || !is.null(model_version) || !is.null(library_metadata) ||
-      fs::file_size(file) > 5e6) {
+    fs::file_size(file) > 5e6) {
     cli::cli_alert_info('Using multi-step upload.')
 
     temporary <- FALSE
@@ -68,7 +67,6 @@ ps_upload_file <- function(file, description = NULL, incumbents = NULL,
       ) %>%
       httr2::req_perform() %>%
       httr2::resp_body_json()
-
   } else {
     cli::cli_alert_info('Using single-step upload.')
 
@@ -80,7 +78,7 @@ ps_upload_file <- function(file, description = NULL, incumbents = NULL,
 
     req <- httr2::request(base_url = api_url(temporary)) %>%
       httr2::req_auth_bearer_token(token = ps_get_key()) %>%
-      httr2::req_body_file(path = file)# switch to req_body_multipart to add description?
+      httr2::req_body_file(path = file) # switch to req_body_multipart to add description?
 
     out <- req %>%
       httr2::req_perform() %>%
@@ -98,7 +96,6 @@ ps_upload_file <- function(file, description = NULL, incumbents = NULL,
 #' @rdname upload
 #' @export
 ps_upload_redist <- function(map, plans, draw, ...) {
-
   plans <- plans %>%
     dplyr::filter(.data$draw == .env$draw) %>%
     attr('plans')
@@ -121,7 +118,6 @@ ps_upload_redist <- function(map, plans, draw, ...) {
 #' @rdname upload
 #' @export
 ps_upload_shp <- function(shp, ...) {
-
   path <- fs::file_temp(ext = '.geojson')
 
   shp %>%
