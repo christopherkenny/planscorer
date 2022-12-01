@@ -5,6 +5,8 @@
 #' @return `tibble` with district and plan level data
 #' @export
 #'
+#' @concept results
+#'
 #' @examples
 #' url <- 'https://planscore.s3.amazonaws.com/uploads/20221127T213653.168557156Z/index.json'
 #' ps_ingest(url)

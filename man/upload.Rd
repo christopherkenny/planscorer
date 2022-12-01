@@ -58,3 +58,4 @@ file <- system.file('extdata/null-plan-incumbency.geojson', package = 'PlanScore
 ps_upload_file(file)
 \dontshow{\}) # examplesIf}
 }
+\concept{upload}

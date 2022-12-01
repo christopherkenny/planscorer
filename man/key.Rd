@@ -19,3 +19,4 @@ Check or Get PlanScore API Key
 \examples{
 ps_has_key()
 }
+\concept{key}

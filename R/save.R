@@ -6,6 +6,7 @@
 #' @param json should the file be saved as `.json` (`TRUE`) or `.tsv` (`FALSE`).
 #' `json = TRUE` is slower but contains more information.
 #'
+#' @concept results
 #'
 #' @return path to `json` file
 #' @export

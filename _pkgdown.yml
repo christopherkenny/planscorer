@@ -1,4 +1,23 @@
 url: http://christophertkenny.com/PlanScoreR/
 template:
   bootstrap: 5
+  params:
+    bootswatch: morph
+reference:
+- title: "Upload plans to PlanScore"
+  desc: "Upload files, `sf` tibbles, or `redist_plans` to PlanScore"
+- contents:
+  - has_concept("upload")
+- title: "Download outputs from PlanScore"
+  desc: "Obtain the results from uploaded plans"
+- contents:
+  - has_concept("results")
+- title: "PlanScore Information"
+  desc: "Get details on PlanScore models and states"
+- contents:
+  - has_concept("info")
+- title: "API Key"
+  desc: "Work with PlanScore API key and your environment"
+- contents:
+  - has_concept("key")
 

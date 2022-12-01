@@ -25,3 +25,4 @@ tf <- tempfile(fileext = '.png')
 ps_capture(url, path = tf)
 }
 }
+\concept{results}

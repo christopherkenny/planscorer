@@ -5,6 +5,8 @@
 #'
 #' @name key
 #'
+#' @concept key
+#'
 #' @examples
 #' ps_has_key()
 ps_has_key <- function() {
@@ -29,6 +31,8 @@ ps_get_key <- function() {
 #' @param key Character. API key to add to add.
 #' @param overwrite Defaults to FALSE. Boolean. Should existing `PLANSCORE_KEY` in Renviron be overwritten?
 #' @param install Defaults to FALSE. Boolean. Should this be added '~/.Renviron' file?
+#'
+#' @concept key
 #'
 #' @return key, invisibly
 #' @export

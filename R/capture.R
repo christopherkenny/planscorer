@@ -6,6 +6,8 @@
 #' @return path to screenshot
 #' @export
 #'
+#' @concept results
+#'
 #' @examples
 #' \donttest{
 #' # often times out

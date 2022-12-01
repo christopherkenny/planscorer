@@ -14,6 +14,8 @@
 #'
 #' @name upload
 #'
+#' @concept upload
+#'
 #' @examplesIf PlanScoreR::ps_has_key()
 #' # Requires API Key
 #' file <- system.file('extdata/null-plan-incumbency.geojson', package = 'PlanScoreR')

@@ -3,6 +3,8 @@
 #' @return tibble of model versions
 #' @export
 #'
+#' @concept info
+#'
 #' @examples
 #' ps_model_versions()
 ps_model_versions <- function() {

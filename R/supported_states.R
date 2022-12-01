@@ -3,6 +3,8 @@
 #' @return tibble of supported states
 #' @export
 #'
+#' @concept info
+#'
 #' @examples
 #' ps_supported_states()
 ps_supported_states <- function() {
