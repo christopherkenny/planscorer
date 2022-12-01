@@ -10,7 +10,6 @@ Authors@R: c(
     person(given = "Michal",
            family = "Migurski",
            role = c("aut"),
-           email = "mike-fromsite@teczno.com",
            comment = c("python original, https://github.com/PlanScore/PlanScore-CLI")
            )
            )
