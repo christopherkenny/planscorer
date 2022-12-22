@@ -30,6 +30,14 @@ You can install the development version of PlanScoreR from [GitHub](https://gith
 remotes::install_github('christopherkenny/PlanScoreR')
 ```
 
+## Authentication
+
+To use PlanScoreR, you must have an API key from PlanScore. Otherwise, you will get a 403 forbidden error.
+
+To get a key, follow the [instructions here](https://github.com/PlanScore/PlanScore/blob/main/API.md).
+
+Once you have a key, use `ps_set_key('your_key')`. Optionally use `ps_set_key('your_key', install = TRUE)` to allow your key to be available across sessions.
+
 ## Example
 
 With a file, you can upload using the `ps_upload_file()` option:
