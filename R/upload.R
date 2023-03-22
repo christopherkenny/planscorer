@@ -16,9 +16,9 @@
 #'
 #' @concept upload
 #'
-#' @examplesIf PlanScoreR::ps_has_key()
+#' @examplesIf planscorer::ps_has_key()
 #' # Requires API Key
-#' file <- system.file('extdata/null-plan-incumbency.geojson', package = 'PlanScoreR')
+#' file <- system.file('extdata/null-plan-incumbency.geojson', package = 'planscorer')
 #' ps_upload_file(file)
 ps_upload_file <- function(file, description = NULL, incumbents = NULL,
                            model_version = NULL, library_metadata = NULL,

@@ -1,4 +1,4 @@
-citHeader("To cite PlanScoreR in publications use:")
+citHeader("To cite planscorer in publications use:")
 
 citEntry(
   entry    = "misc",

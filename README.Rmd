@@ -13,26 +13,26 @@ knitr::opts_chunk$set(
 )
 ```
 
-# PlanScoreR
+# planscorer <a href="http://christophertkenny.com/planscorer/"><img src="man/figures/logo.png" align="right" height="138" /></a>
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/christopherkenny/PlanScoreR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/christopherkenny/PlanScoreR/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/christopherkenny/planscorer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/christopherkenny/planscorer/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-`PlanScoreR` offers an R interface to PlanScore.org's API.
+`planscorer` offers an R interface to PlanScore.org's API.
 
 ## Installation
 
-You can install the development version of PlanScoreR from [GitHub](https://github.com/) with:
+You can install the development version of planscorer from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages('remotes')
-remotes::install_github('christopherkenny/PlanScoreR')
+remotes::install_github('christopherkenny/planscorer')
 ```
 
 ## Authentication
 
-To use PlanScoreR, you must have an API key from PlanScore. Otherwise, you will get a 403 forbidden error.
+To use planscorer, you must have an API key from PlanScore. Otherwise, you will get a 403 forbidden error.
 
 To get a key, follow the [instructions here](https://github.com/PlanScore/PlanScore/blob/main/API.md).
 
@@ -43,10 +43,10 @@ Once you have a key, use `ps_set_key('your_key')`. Optionally use `ps_set_key('y
 With a file, you can upload using the `ps_upload_file()` option:
 
 ```{r example}
-library(PlanScoreR)
+library(planscorer)
 ## basic example code
 
-file <- system.file('extdata/null-plan-incumbency.geojson', package = 'PlanScoreR')
+file <- system.file('extdata/null-plan-incumbency.geojson', package = 'planscorer')
 links <- ps_upload_file(file)
 ```
 
