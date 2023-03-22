@@ -1,6 +1,6 @@
 Package: planscorer
-Title: Interact with PlanScore
-Version: 0.0.0.9000
+Title: Score Redistricting Plans with PlanScore
+Version: 0.0.1
 Authors@R: c(
     person(given = "Christopher T.",
            family = "Kenny",
