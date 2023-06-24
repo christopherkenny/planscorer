@@ -29,6 +29,8 @@ ps_capture <- function(link, path) {
   }
 
   webshot2::webshot(url = link, file = path)
+  # must close the supervisor, doesn't close by default
+  processx::supervisor_kill()
 
   path
 }
