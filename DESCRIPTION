@@ -32,7 +32,6 @@ Imports:
     fs,
     httr2,
     jsonlite,
-    magrittr,
     processx,
     purrr,
     readr,
