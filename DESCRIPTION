@@ -32,13 +32,11 @@ Imports:
     fs,
     httr2,
     jsonlite,
-    processx,
     purrr,
     readr,
     rlang,
     sf,
     stringr,
     tibble,
-    tidyr,
-    webshot2
+    tidyr
 URL: http://christophertkenny.com/planscorer/
