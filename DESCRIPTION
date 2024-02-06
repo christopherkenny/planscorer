@@ -40,3 +40,9 @@ Imports:
     tibble,
     tidyr
 URL: http://christophertkenny.com/planscorer/
+Suggests: 
+    httptest2,
+    spelling,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Language: en-US
