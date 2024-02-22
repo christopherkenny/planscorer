@@ -1,5 +1,5 @@
 Package: planscorer
-Title: Score Redistricting Plans with PlanScore
+Title: Score Redistricting Plans with 'PlanScore'
 Version: 0.0.1
 Authors@R: c(
     person(given = "Christopher T.",
@@ -15,7 +15,7 @@ Authors@R: c(
            family = "McCartan",
            role = "art")
            )
-Description: Provides access to the PlanScore Application Programming Interface 
+Description: Provides access to the 'PlanScore' Application Programming Interface 
     (<https://github.com/PlanScore/PlanScore/blob/main/API.md>) for scoring redistricting
     plans. Allows for upload of plans from block assignment files and shape files. 
     For shapes in memory, such as from 'sf' or 'redist', it processes them to save
