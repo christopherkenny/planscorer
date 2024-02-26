@@ -38,7 +38,8 @@ Imports:
     sf,
     stringr,
     tibble,
-    tidyr
+    tidyr,
+    webshot2
 URL: http://christophertkenny.com/planscorer/, https://github.com/christopherkenny/planscorer
 BugReports: https://github.com/christopherkenny/planscorer/issues
 Suggests: 

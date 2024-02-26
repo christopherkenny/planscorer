@@ -27,9 +27,9 @@ ps_capture <- function(link, path) {
   }
 
   webshot2::webshot(url = link, file = path)
-  # must close the supervisor on non-windows, doesn't close by default
-  if (Sys.info()[["sysname"]] != "Windows") {
-    processx::supervisor_kill()
-  }
+  # # must close the supervisor on non-windows, doesn't close by default
+  # if (Sys.info()[["sysname"]] != "Windows") {
+  #   processx::supervisor_kill()
+  # }
   path
 }
