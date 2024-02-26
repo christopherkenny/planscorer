@@ -39,7 +39,8 @@ Imports:
     stringr,
     tibble,
     tidyr
-URL: http://christophertkenny.com/planscorer/
+URL: http://christophertkenny.com/planscorer/, https://github.com/christopherkenny/planscorer
+BugReports: https://github.com/christopherkenny/planscorer/issues
 Suggests: 
     httptest2,
     spelling,
