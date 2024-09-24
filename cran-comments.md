@@ -1,6 +1,6 @@
 # Test Environments
-* local R installation (Windows 11), R 4.3.2
-* local R installation (macOS), R 4.3.2
+* local R installation (Windows 11), R 4.4.1
+* local R installation (macOS), R 4.4.1
 * macos-latest (on GitHub Actions), (release)
 * windows-latest (on GitHub Actions), (release)
 * ubuntu-latest (on GitHub Actions), (release)
@@ -12,4 +12,4 @@
 
 0 errors | 0 warnings | 1 note
 
-* This is a new release.
+* This fixes the CRAN error due to use of unreliable internet resources.
