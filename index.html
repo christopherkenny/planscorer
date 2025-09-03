@@ -59,8 +59,11 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of planscorer from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<p>You can install the stable version of planscorer from CRAN with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'planscorer'</span><span class="op">)</span></span></code></pre></div>
+<p>You can install the development version of planscorer from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages('remotes')</span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'christopherkenny/planscorer'</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -75,7 +78,7 @@
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
 <p>With a file, you can upload using the <code><a href="reference/upload.html">ps_upload_file()</a></code> option:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="http://christophertkenny.com/planscorer/">planscorer</a></span><span class="op">)</span></span>
 <span><span class="co">## basic example code</span></span>
 <span></span>
@@ -83,24 +86,25 @@
 <span><span class="va">links</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/upload.html">ps_upload_file</a></span><span class="op">(</span><span class="va">file</span><span class="op">)</span></span>
 <span><span class="co">#&gt; ℹ Using single-step upload.</span></span></code></pre></div>
 <p>To read the data results:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/ps_ingest.html">ps_ingest</a></span><span class="op">(</span><span class="va">links</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 2 × 62</span></span>
-<span><span class="co">#&gt;   district democratic_…¹ democ…² democ…³ repub…⁴ repub…⁵ us_pr…⁶ us_pr…⁷ distr…⁸</span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt;</span></span>
-<span><span class="co">#&gt; 1 1                 155.    29.9   0        445.    29.9     100     300       0</span></span>
-<span><span class="co">#&gt; 2 2                 379.    29.6   0.998    221.    29.6     500     300       1</span></span>
-<span><span class="co">#&gt; # … with 53 more variables: polsby_popper &lt;dbl&gt;, reock &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   declination &lt;dbl&gt;, declination_absolute_percent_rank &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt;   district democratic_votes democratic_votes_sd democratic_wins republican_votes</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;               &lt;dbl&gt;               &lt;dbl&gt;           &lt;dbl&gt;            &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 1                    155.                29.9           0                 445.</span></span>
+<span><span class="co">#&gt; 2 2                    379.                29.6           0.998             221.</span></span>
+<span><span class="co">#&gt; # ℹ 57 more variables: republican_votes_sd &lt;dbl&gt;, us_president_2016_dem &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   us_president_2016_rep &lt;dbl&gt;, district_number &lt;int&gt;, polsby_popper &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   reock &lt;dbl&gt;, declination &lt;dbl&gt;, declination_absolute_percent_rank &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   declination_is_valid &lt;dbl&gt;, declination_positives &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   declination_relative_percent_rank &lt;dbl&gt;, declination_sd &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   efficiency_gap &lt;dbl&gt;, efficiency_gap_1_dem &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   efficiency_gap_1_dem_sd &lt;dbl&gt;, efficiency_gap_1_rep &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   efficiency_gap_1_rep_sd &lt;dbl&gt;, efficiency_gap_2_dem &lt;dbl&gt;, …</span></span></code></pre></div>
+<span><span class="co">#&gt; #   efficiency_gap_1_dem_sd &lt;dbl&gt;, efficiency_gap_1_rep &lt;dbl&gt;, …</span></span></code></pre></div>
 <p>To capture the outputted figures on the site:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">img</span> <span class="op">&lt;-</span> <span class="st">'man/figures/README-planscore.png'</span></span>
 <span><span class="fu"><a href="reference/ps_capture.html">ps_capture</a></span><span class="op">(</span><span class="va">links</span>, <span class="va">img</span><span class="op">)</span></span>
+<span><span class="co">#&gt; https://planscore.org/plan.html?temporary-bd7843f2-9dfa-4c80-9b63-3400e77dab18 screenshot completed</span></span>
 <span><span class="co">#&gt; [1] "man/figures/README-planscore.png"</span></span>
 <span></span>
 <span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html" class="external-link">include_graphics</a></span><span class="op">(</span><span class="va">img</span><span class="op">)</span></span></code></pre></div>
@@ -144,7 +148,10 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/christopherkenny/planscorer/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/christopherkenny/planscorer/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://github.com/christopherkenny/planscorer/actions" class="external-link"><img src="https://github.com/christopherkenny/planscorer/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://christopherkenny.r-universe.dev/planscorer" class="external-link"><img src="https://christopherkenny.r-universe.dev/badges/planscorer" alt="planscorer status badge"></a></li>
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#stable" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
+<li><a href="https://CRAN.R-project.org/package=planscorer" class="external-link"><img src="https://www.r-pkg.org/badges/version/planscorer" alt="CRAN status"></a></li>
 </ul>
 </div>
 
