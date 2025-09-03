@@ -1,15 +1,22 @@
-# Test Environments
-* local R installation (Windows 11), R 4.4.1
-* local R installation (macOS), R 4.4.1
-* macos-latest (on GitHub Actions), (release)
+## Test environments
+
+* local R installation (Windows 11), R 4.5.1
+* local R installation (macOS), R 4.5.1
+* ubuntu-latest (on GitHub Actions), (oldrel-1, devel, and release)
 * windows-latest (on GitHub Actions), (release)
-* ubuntu-latest (on GitHub Actions), (release)
-* ubuntu-latest (on GitHub Actions), (old release)
-* ubuntu-latest (on GitHub Actions), (devel)
+* macOS-latest (on GitHub Actions), (release)
 * Windows (on Winbuilder), (release)
 
 ## R CMD check results
 
 0 errors | 0 warnings | 1 note
 
-* This fixes the CRAN error due to use of unreliable internet resources.
+New maintainer:
+  Christopher T. Kenny <ctkenny@proton.me>
+Old maintainer(s):
+  Christopher T. Kenny <christopherkenny@fas.harvard.edu>
+
+## Additional notes
+
+* This includes updating the maintainer email to ctkenny@proton.me. Please see the email from christopherkenny@fas.harvard.edu on 2025-08-29 for confirmation.
+* This corrects the R dependency (to R >= 4.1.0) to rectify the NOTE on CRAN.
