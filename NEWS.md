@@ -1,3 +1,7 @@
+# planscorer 0.0.4
+
+* Updates the multi-step upload process (internall) to match upstream changes in PlanScore API.
+
 # planscorer 0.0.3
 
 * Now depends on R 4.1.0 due to use of base pipe.
