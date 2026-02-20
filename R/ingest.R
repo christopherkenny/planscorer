@@ -1,6 +1,9 @@
 #' Ingest PlanScore Output
 #'
 #' @param link index url output from `ps_upload()` functions
+#' @param max_tries number of times to try to read json if `link` is a json file.
+#' Default is 4. This is necessary because the json file may not be immediately
+#' available after upload, and may return an error if read too soon.
 #'
 #' @return `tibble` with district and plan level data
 #' @export
@@ -10,7 +13,7 @@
 #' @examples
 #' url <- 'https://planscore.s3.amazonaws.com/uploads/20221127T213653.168557156Z/index.json'
 #' ps_ingest(url)
-ps_ingest <- function(link) {
+ps_ingest <- function(link, max_tries = 4) {
   if (missing(link)) {
     cli::cli_abort('{.arg link} is required.')
   }
@@ -20,7 +23,7 @@ ps_ingest <- function(link) {
   }
 
   if (fs::path_ext(link) == 'json') {
-    j <- jsonlite::read_json(link)
+    j <- wait_retry_json(link, max_tries)
 
     totals <- lapply(j$districts, \(x) purrr::pluck(x, 'totals')) |>
       dplyr::bind_rows(.id = 'district') |>
@@ -86,4 +89,15 @@ ps_ingest <- function(link) {
         }
       )
   }
+}
+
+wait_retry_json <- function(x, max_tries = 4) {
+  for (i in seq_len(max_tries)) {
+    j <- jsonlite::read_json(x)
+    if ('districts' %in% names(j)) {
+      break
+    }
+    Sys.sleep(5)
+  }
+  j
 }

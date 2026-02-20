@@ -1,6 +1,10 @@
+# planscorer 0.0.5
+
+* Adds a retry to `ps_ingest()` which sometimes needs to give the PlanScore API a moment to process the uploaded file before it can be ingested. This should help reduce the number of times users have to manually retry the upload process.
+
 # planscorer 0.0.4
 
-* Updates the multi-step upload process (internall) to match upstream changes in PlanScore API.
+* Updates the multi-step upload process (internally) to match upstream changes in PlanScore API.
 
 # planscorer 0.0.3
 
