@@ -97,6 +97,7 @@ wait_retry_json <- function(x, max_tries = 4) {
     if ('districts' %in% names(j)) {
       break
     }
+    cli::cli_inform('Attempt {.val {i}} of {.val {max_tries}} failed. Retrying in 5 seconds...')
     Sys.sleep(5)
   }
   j
