@@ -5,7 +5,7 @@ Ingest PlanScore Output
 ## Usage
 
 ``` r
-ps_ingest(link)
+ps_ingest(link, max_tries = 4)
 ```
 
 ## Arguments
@@ -13,6 +13,12 @@ ps_ingest(link)
 - link:
 
   index url output from `ps_upload()` functions
+
+- max_tries:
+
+  number of times to try to read json if `link` is a json file. Default
+  is 4. This is necessary because the json file may not be immediately
+  available after upload, and may return an error if read too soon.
 
 ## Value
 

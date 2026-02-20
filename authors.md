@@ -14,7 +14,7 @@
 ## Citation
 
 Source:
-[`inst/CITATION`](https://github.com/christopherkenny/planscorer/blob/v0.0.3/inst/CITATION)
+[`inst/CITATION`](https://github.com/christopherkenny/planscorer/blob/main/inst/CITATION)
 
 Kenny C, Migurski M, McCartan C (2024). *planscorer: Score Redistricting
 Plans with PlanScore*. R package,

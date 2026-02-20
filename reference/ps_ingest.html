@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">planscorer</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Ingest PlanScore Output</h1>
-      <small class="dont-index">Source: <a href="https://github.com/christopherkenny/planscorer/blob/v0.0.3/R/ingest.R" class="external-link"><code>R/ingest.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/christopherkenny/planscorer/blob/main/R/ingest.R" class="external-link"><code>R/ingest.R</code></a></small>
       <div class="d-none name"><code>ps_ingest.Rd</code></div>
     </div>
 
@@ -38,7 +38,7 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">ps_ingest</span><span class="op">(</span><span class="va">link</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">ps_ingest</span><span class="op">(</span><span class="va">link</span>, max_tries <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -47,6 +47,12 @@
 
 <dl><dt id="arg-link">link<a class="anchor" aria-label="anchor" href="#arg-link"></a></dt>
 <dd><p>index url output from <code>ps_upload()</code> functions</p></dd>
+
+
+<dt id="arg-max-tries">max_tries<a class="anchor" aria-label="anchor" href="#arg-max-tries"></a></dt>
+<dd><p>number of times to try to read json if <code>link</code> is a json file.
+Default is 4. This is necessary because the json file may not be immediately
+available after upload, and may return an error if read too soon.</p></dd>
 
 </dl></div>
     <div class="section level2">
