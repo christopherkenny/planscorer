@@ -23,6 +23,7 @@ ps_ingest <- function(link, max_tries = 4) {
   }
 
   if (fs::path_ext(link) == 'json') {
+    max_tries <- min(1, max_tries)
     j <- wait_retry_json(link, max_tries)
 
     totals <- lapply(j$districts, \(x) purrr::pluck(x, 'totals')) |>
