@@ -1,10 +1,5 @@
 # Changelog
 
-## planscorer 0.0.4
-
-- Updates the multi-step upload process (internall) to match upstream
-  changes in PlanScore API.
-
 ## planscorer 0.0.3
 
 CRAN release: 2025-09-04
