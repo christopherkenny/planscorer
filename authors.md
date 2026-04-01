@@ -9,7 +9,7 @@
 - **Michal Migurski**. Author.  
   python original, https://github.com/PlanScore/PlanScore-CLI
 
-- **Cory McCartan**. Artist.
+- **Cory McCartan**. Artist. [](https://orcid.org/0000-0002-6251-669X)
 
 ## Citation
 
