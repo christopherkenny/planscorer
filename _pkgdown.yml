@@ -1,6 +1,7 @@
 url: http://christophertkenny.com/planscorer/
 template:
   bootstrap: 5
+  package: ctktemplate
   bootswatch: pulse
 reference:
 - title: "Upload plans to PlanScore"
