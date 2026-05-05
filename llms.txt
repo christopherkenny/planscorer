@@ -7,6 +7,7 @@
 You can install the stable version of planscorer from CRAN with:
 
 ``` r
+
 install.packages('planscorer')
 ```
 
@@ -14,6 +15,7 @@ You can install the development version of planscorer from
 [GitHub](https://github.com/) with:
 
 ``` r
+
 # install.packages('remotes')
 remotes::install_github('christopherkenny/planscorer')
 ```
@@ -37,6 +39,7 @@ With a file, you can upload using the
 option:
 
 ``` r
+
 library(planscorer)
 ## basic example code
 
@@ -48,6 +51,7 @@ links <- ps_upload_file(file)
 To read the data results:
 
 ``` r
+
 ps_ingest(links)
 #> # A tibble: 2 × 62
 #>   district democratic_votes democratic_votes_sd democratic_wins republican_votes
@@ -66,6 +70,7 @@ ps_ingest(links)
 To capture the outputted figures on the site:
 
 ``` r
+
 img <- 'man/figures/README-planscore.png'
 ps_capture(links, img)
 #> https://planscore.org/plan.html?temporary-bd7843f2-9dfa-4c80-9b63-3400e77dab18 screenshot completed
