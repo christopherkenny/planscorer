@@ -5,7 +5,7 @@
 #'
 #' @concept info
 #'
-#' @examples
+#' @examplesIf planscorer::ps_has_key()
 #' ps_model_versions()
 ps_model_versions <- function() {
   httr2::request('https://api.planscore.org/model_versions') |>
